@@ -8,7 +8,15 @@
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+    const result = []
+    let higherArray = arr1.length > arr2.length ? arr1 : arr2
+    let lowerArray = arr1.length < arr2.length ? arr1 : arr2
+
+    for (let item of higherArray) {
+        if (lowerArray.includes(item)) result.push(item)
+    }
+
+    return Array.from(new Set(result))
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

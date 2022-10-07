@@ -7,7 +7,15 @@
 */
 
 function capitalize(str) {
-    // Напишите код здесь
+    const trimmedString = str.trim()
+
+    if (!trimmedString) return str
+
+    return trimmedString
+        .split(/\s+/)
+        .map((word) => word[0].toUpperCase() + word.slice(1))
+        .join(' ')
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
